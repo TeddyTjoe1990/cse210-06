@@ -1,6 +1,9 @@
+from spaceinv.constants import PURPLE
+
+
 class Color:
     """A color."""
-    def __init__(self, red, green, blue, alpha = 255):
+    def __init__(self, red, green, blue, purple, yellow, white = 255):
         """Constructs a new Color using the specified red, green, blue and alpha values. The alpha 
         value is the color's opacity.
         
@@ -13,7 +16,9 @@ class Color:
         self._red = red
         self._green = green
         self._blue = blue
-        self._alpha = alpha
+        self._yellow = yellow
+        self._white = white
+        self._purple = purple
 
     def to_tuple(self):
         """Gets the color as a tuple of four values (red, green, blue, alpha).
@@ -21,4 +26,4 @@ class Color:
         Returns:
             The color as a Tuple of four values (red, green, blue, alpha)
         """
-        return (self._red, self._green, self._blue, self._alpha)  
+        return (self._red, self._green, self._blue, self._yellow, self._white, self._purple)  

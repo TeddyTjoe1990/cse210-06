@@ -13,3 +13,14 @@ The aliens attempt to destroy the ship by firing at it while they approach the b
 the alien invasion is successful and the game ends. A special "mystery ship" will occasionally move across the top of the
 screen and award bonus points if destroyed. The ship is partially protected by several stationary defense bunkers that are
 gradually destroyed by projectiles from the aliens and player.
+
+## How To Play
+
+- If you have the correct version of Python and Pygame installed, you can run the program in the command prompt / terminal.
+
+- 
+
+## Author
+
+- Julieta White
+- Teddy Tjoe

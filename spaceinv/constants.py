@@ -17,14 +17,21 @@ FIELD_LEFT = 0
 FIELD_RIGHT = SCREEN_WIDTH
 
 # FONT
-FONT_FILE = "batter/assets/fonts/zorque.otf"
+FONT_FILE = "spaceinv/assets/fonts/zorque.otf"
 FONT_SMALL = 32
 FONT_LARGE = 48
 
 # SOUND
-BOUNCE_SOUND = "batter/assets/sounds/boing.wav"
-WELCOME_SOUND = "batter/assets/sounds/start.wav"
-OVER_SOUND = "batter/assets/sounds/over.wav"
+Movement1_SOUND = "spaceinv/asset/sounds/sounds_0.wav"
+Movement2_SOUND = "spaceinv/asset/sounds/sounds_1.wav"
+Movement3_SOUND = "spaceinv/asset/sounds/sounds_2.wav"
+Movement4_SOUND = "spaceinv/asset/sounds/sounds_4.wav"
+Invaderkilled_SOUND = "spaceinv/asset/sounds/sounds_invaderkilled.wav"
+Mysteryentered_SOUND = "spaceinv/asset/sounds/sounds_mysteryentered.wav"
+Mysterykilled_SOUND = "spaceinv/asset/sounds/sounds_mysterykilled.wav"
+Shipexplotion_SOUND = "spaceinv/asset/sounds/sounds_shipexplotion.wav"
+Shoot_SOUND = "spaceinv/asset/sounds/sounds_shoot.wav"
+Shoot2_SOUND = "spaceinv/asset/sounds/sounds_shoot2.wav"
 
 # TEXT
 ALIGN_CENTER = 0
@@ -32,11 +39,12 @@ ALIGN_LEFT = 1
 ALIGN_RIGHT = 2
 
 # COLORS
-WHITE = Color(255, 255, 255)
+RED = Color(237, 28, 36)
 GREEN = Color(78, 255, 87)
 YELLOW = Color(241, 255, 0)
 BLUE = Color(80, 255, 239)
-RED = Color(237, 28, 36)
+PURPLE = Color(203, 0, 255)
+WHITE = Color(255, 255, 255)
 
 # KEYS
 LEFT = "left"

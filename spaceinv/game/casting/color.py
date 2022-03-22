@@ -1,3 +1,4 @@
+
 class Color:
     """A color."""
     def __init__(self, red, green, blue, alpha = 255):
@@ -17,7 +18,6 @@ class Color:
 
     def to_tuple(self):
         """Gets the color as a tuple of four values (red, green, blue, alpha).
-
         Returns:
             The color as a Tuple of four values (red, green, blue, alpha)
         """

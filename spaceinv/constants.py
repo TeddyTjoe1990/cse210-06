@@ -64,3 +64,69 @@ GAME_OVER = 4
 LEVEL_FILE = "batter/assets/data/level-{:03}.txt"
 BASE_LEVELS = 5
 
+# -------------------------------------------------------------------------------------------------- 
+# SCRIPTING CONSTANTS
+# -------------------------------------------------------------------------------------------------- 
+
+# PHASES
+INITIALIZE = 0
+LOAD = 1
+INPUT = 2
+UPDATE = 3
+OUTPUT = 4
+UNLOAD = 5
+RELEASE = 6
+
+# -------------------------------------------------------------------------------------------------- 
+# CASTING CONSTANTS
+# -------------------------------------------------------------------------------------------------- 
+
+# STATS
+STATS_GROUP = "stats"
+DEFAULT_LIVES = 3
+MAXIMUM_LIVES = 5
+
+# HUD
+HUD_MARGIN = 15
+LEVEL_GROUP = "level"
+LIVES_GROUP = "lives"
+SCORE_GROUP = "score"
+LEVEL_FORMAT = "LEVEL: {}"
+LIVES_FORMAT = "LIVES: {}"
+SCORE_FORMAT = "SCORE: {}"
+
+# BALL
+BALL_GROUP = "balls"
+BALL_IMAGE = "batter/assets/images/000.png"
+BALL_WIDTH = 28
+BALL_HEIGHT = 28
+BALL_VELOCITY = 6
+
+# RACKET
+RACKET_GROUP = "rackets"
+RACKET_IMAGES = [f"batter/assets/images/{n:03}.png" for n in range(100, 103)]
+RACKET_WIDTH = 106
+RACKET_HEIGHT = 28
+RACKET_RATE = 6
+RACKET_VELOCITY = 7
+
+# BRICK
+BRICK_GROUP = "bricks"
+BRICK_IMAGES = {
+    "b": [f"batter/assets/images/{i:03}.png" for i in range(10,19)],
+    "g": [f"batter/assets/images/{i:03}.png" for i in range(20,29)],
+    "p": [f"batter/assets/images/{i:03}.png" for i in range(30,39)],
+    "y": [f"batter/assets/images/{i:03}.png" for i in range(40,49)]
+}
+BRICK_WIDTH = 80
+BRICK_HEIGHT = 28
+BRICK_DELAY = 0.5
+BRICK_RATE = 4
+BRICK_POINTS = 50
+
+# DIALOG
+DIALOG_GROUP = "dialogs"
+ENTER_TO_START = "PRESS ENTER TO START"
+PREP_TO_LAUNCH = "PREPARING TO LAUNCH"
+WAS_GOOD_GAME = "GAME OVER"
+

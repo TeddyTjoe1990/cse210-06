@@ -1,7 +1,15 @@
+import random
 from game.casting.color import Color
+from os.path import abspath, dirname
+from random import choice
+
+BASE_PATH = abspath(dirname(__file__))
+FONT_PATH = BASE_PATH + '/fonts/'
+IMAGE_PATH = BASE_PATH + '/images/'
+SOUND_PATH = BASE_PATH + '/sounds/'
 
 # GAME
-GAME_NAME = "Batter"
+GAME_NAME = "Space Invaders"
 FRAME_RATE = 60
 
 # SCREEN
@@ -49,7 +57,7 @@ WHITE = Color(255, 255, 255)
 # KEYS
 LEFT = "left"
 RIGHT = "right"
-SPACE = "space"
+SPACE = "fire"
 ENTER = "enter"
 PAUSE = "p"
 

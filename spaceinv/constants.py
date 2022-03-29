@@ -1,7 +1,7 @@
 from game.casting.color import Color
 
 # GAME
-GAME_NAME = "Batter"
+GAME_NAME = "space invaders"
 FRAME_RATE = 60
 
 # SCREEN
@@ -63,4 +63,70 @@ GAME_OVER = 4
 # LEVELS
 LEVEL_FILE = "batter/assets/data/level-{:03}.txt"
 BASE_LEVELS = 5
+
+# -------------------------------------------------------------------------------------------------- 
+# SCRIPTING CONSTANTS
+# -------------------------------------------------------------------------------------------------- 
+
+# PHASES
+INITIALIZE = 0
+LOAD = 1
+INPUT = 2
+UPDATE = 3
+OUTPUT = 4
+UNLOAD = 5
+RELEASE = 6
+
+# -------------------------------------------------------------------------------------------------- 
+# CASTING CONSTANTS
+# -------------------------------------------------------------------------------------------------- 
+
+# STATS
+STATS_GROUP = "stats"
+DEFAULT_LIVES = 3
+MAXIMUM_LIVES = 5
+
+# HUD
+HUD_MARGIN = 15
+LEVEL_GROUP = "level"
+LIVES_GROUP = "lives"
+SCORE_GROUP = "score"
+LEVEL_FORMAT = "LEVEL: {}"
+LIVES_FORMAT = "LIVES: {}"
+SCORE_FORMAT = "SCORE: {}"
+
+# SHIP
+SHIP_GROUP = "ships"
+SHIP_IMAGE = "spaceinv/assets/images/ship.png"
+SHIP_WIDTH = 28
+SHIP_HEIGHT = 28
+SHIP_RATE = 6
+SHIP_VELOCITY = 6
+
+# SHOOT 
+SHOOT_GROUP = "shoots"
+SHOOT_IMAGES = "spaceinv/assets/images/laser.png" 
+SHOOT_WIDTH = 28
+SHOOT_HEIGHT = 14
+SHOOT_RATE = 6
+SHOOT_VELOCITY = 7
+
+# ENEMY
+ENEMY_GROUP = "enemies"
+ENEMY_IMAGES = {
+    "b": [f"spaceinv/assets/images/{i:03}.png" for i in range(4, 6)],
+    "g": [f"spaceinv/assets/images/{i:03}.png" for i in range(7, 9)],
+    "p": [f"spaceinv/assets/images/{i:03}.png" for i in range(1, 3)]
+}
+ENEMY_WIDTH = 28
+ENEMY_HEIGHT = 28
+ENEMY_RATE = 4
+ENEMY_VELOCITY = 7
+ENEMY_POINTS = 50
+
+# DIALOG
+DIALOG_GROUP = "dialogs"
+ENTER_TO_START = "PRESS ENTER TO START"
+PREP_TO_LAUNCH = "PREPARING TO LAUNCH"
+WAS_GOOD_GAME = "GAME OVER"
 

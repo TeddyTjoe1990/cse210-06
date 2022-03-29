@@ -95,34 +95,34 @@ LEVEL_FORMAT = "LEVEL: {}"
 LIVES_FORMAT = "LIVES: {}"
 SCORE_FORMAT = "SCORE: {}"
 
-# BALL
-BALL_GROUP = "balls"
-BALL_IMAGE = "batter/assets/images/000.png"
-BALL_WIDTH = 28
-BALL_HEIGHT = 28
-BALL_VELOCITY = 6
+# SHIP
+SHIP_GROUP = "ships"
+SHIP_IMAGE = "spaceinv/assets/images/ship.png"
+SHIP_WIDTH = 28
+SHIP_HEIGHT = 28
+SHIP_RATE = 6
+SHIP_VELOCITY = 6
 
-# RACKET
-RACKET_GROUP = "rackets"
-RACKET_IMAGES = [f"batter/assets/images/{n:03}.png" for n in range(100, 103)]
-RACKET_WIDTH = 106
-RACKET_HEIGHT = 28
-RACKET_RATE = 6
-RACKET_VELOCITY = 7
+# SHOOT 
+SHOOT_GROUP = "shoots"
+SHOOT_IMAGES = "spaceinv/assets/images/laser.png" 
+SHOOT_WIDTH = 28
+SHOOT_HEIGHT = 14
+SHOOT_RATE = 6
+SHOOT_VELOCITY = 7
 
-# BRICK
-BRICK_GROUP = "bricks"
-BRICK_IMAGES = {
-    "b": [f"batter/assets/images/{i:03}.png" for i in range(10,19)],
-    "g": [f"batter/assets/images/{i:03}.png" for i in range(20,29)],
-    "p": [f"batter/assets/images/{i:03}.png" for i in range(30,39)],
-    "y": [f"batter/assets/images/{i:03}.png" for i in range(40,49)]
+# ENEMY
+ENEMY_GROUP = "enemies"
+ENEMY_IMAGES = {
+    "b": [f"spaceinv/assets/images/{i:03}.png" for i in range(4, 6)],
+    "g": [f"spaceinv/assets/images/{i:03}.png" for i in range(7, 9)],
+    "p": [f"spaceinv/assets/images/{i:03}.png" for i in range(1, 3)]
 }
-BRICK_WIDTH = 80
-BRICK_HEIGHT = 28
-BRICK_DELAY = 0.5
-BRICK_RATE = 4
-BRICK_POINTS = 50
+ENEMY_WIDTH = 28
+ENEMY_HEIGHT = 28
+ENEMY_RATE = 4
+ENEMY_VELOCITY = 7
+ENEMY_POINTS = 50
 
 # DIALOG
 DIALOG_GROUP = "dialogs"

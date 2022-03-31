@@ -1,6 +1,5 @@
 from constants import * 
 
-
 class Text:
     """A text message."""
 

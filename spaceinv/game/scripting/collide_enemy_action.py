@@ -13,7 +13,7 @@ class CollideEnemyAction(Action):
         ship = cast.get_first_actor(SHIP_GROUP)
         enemies = cast.get_first_actor(ENEMY_GROUP)
         stats = cast.get_first_actor(STATS_GROUP)
-        over_sound = Sound(OVER_SOUND)
+        over_sound = Sound()
 
         for enemy in enemies:
             ship_body = ship.get_body()

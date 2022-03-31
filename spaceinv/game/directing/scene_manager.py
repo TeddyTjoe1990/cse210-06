@@ -106,7 +106,7 @@ class SceneManager:
         script.clear_actions(INPUT)
         script.add_action(INPUT, TimedChangeSceneAction(IN_PLAY, 2))
         self._add_output_script(script)
-        script.add_action(OUTPUT, PlaySoundAction(self.AUDIO_SERVICE, WELCOME_SOUND))
+        #script.add_action(OUTPUT, PlaySoundAction(self.AUDIO_SERVICE, WELCOME_SOUND))
         
     def _prepare_try_again(self, cast, script):
         self._add_ship(cast)
@@ -170,25 +170,25 @@ class SceneManager:
             for r, row in enumerate(reader):
                 for c, column in enumerate(row):
 
-                    x = FIELD_LEFT + c * BRICK_WIDTH
-                    y = FIELD_TOP + r * BRICK_HEIGHT
+                    x = FIELD_LEFT + c * SHIP_WIDTH
+                    y = FIELD_TOP + r * SHIP_HEIGHT
                     color = column[0]
                     frames = int(column[1])
-                    points = BRICK_POINTS 
+                    points = ENEMY_POINTS 
                     
                     if frames == 1:
                         points *= 2
                     
                     position = Point(x, y)
-                    size = Point(BRICK_WIDTH, BRICK_HEIGHT)
+                    size = Point(SHIP_WIDTH, SHIP_HEIGHT)
                     velocity = Point(0, 0)
-                    images = BRICK_IMAGES[color][0:frames]
+                    images = ENEMY_IMAGES[color][0:frames]
 
                     body = Body(position, size, velocity)
-                    animation = Animation(images, BRICK_RATE, BRICK_DELAY)
+                    animation = Animation(images, ENEMY_RATE, SHIP_VELOCITY)
 
                     enemy = Enemy(body, animation, points)
-                    cast.add_actor(BRICK_GROUP, enemy)
+                    cast.add_actor(ENEMY_GROUP, enemy)
 
     def _add_dialog(self, cast, message):
         cast.clear_actors(DIALOG_GROUP)
@@ -240,8 +240,6 @@ class SceneManager:
         script.add_action(OUTPUT, self.START_DRAWING_ACTION)
         script.add_action(OUTPUT, self.DRAW_HUD_ACTION)
         script.add_action(OUTPUT, self.DRAW_SHIP_ACTION)
-        script.add_action(OUTPUT, self.DRAW_BRICKS_ACTION)
-        #script.add_action(OUTPUT, self.DRAW_SHIP_ACTION)
         script.add_action(OUTPUT, self.DRAW_DIALOG_ACTION)
         script.add_action(OUTPUT, self.END_DRAWING_ACTION)
 
@@ -256,8 +254,6 @@ class SceneManager:
     def _add_update_script(self, script):
         script.clear_actions(UPDATE)
         script.add_action(UPDATE, self.MOVE_SHIP_ACTION)
-        script.add_action(UPDATE, self.COLLIDE_BORDERS_ACTION)
         script.add_action(UPDATE, self.COLLIDE_ENEMY_ACTION)
-        #script.add_action(UPDATE, self.COLLIDE_ENEMY_ACTION)
-        #script.add_action(UPDATE, self.MOVE_SHIP_ACTION)
+        script.add_action(UPDATE, self.COLLIDE_ENEMY_ACTION)
         script.add_action(UPDATE, self.CHECK_OVER_ACTION)

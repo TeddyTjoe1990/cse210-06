@@ -1,20 +1,18 @@
 
-from email.quoprimime import body_check
-from turtle import position
 from game.casting.actor import Actor
 
 class Enemy(Actor):
     """Enemies that can be shoot."""
 
-    def __init__(self, body, animation, points, debug=False):
+    def __init__(self, body, image, points, debug=False):
         super().__init__(debug)
         self._body = body
-        self._animation = animation
+        self._image = image
         self._points = points
     
-    def get_animation(self): 
+    def get_image(self): 
         """Gets the enemy's image."""
-        return self._animation
+        return self._image
 
     def get_body(self):
         """Gets the enemies body."""

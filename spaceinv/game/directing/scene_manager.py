@@ -2,13 +2,13 @@
 import csv
 from constants import *
 from game.casting.animation import Animation
-from game.casting.ball import Ball
 from game.casting.body import Body
 from game.casting.enemies import Enemy
 from game.casting.image import Image
 from game.casting.label import Label
 from game.casting.point import Point
 from game.casting.ship import Ship
+from game.casting.shoot import Shoot
 from game.casting.stats import Stats
 from game.casting.text import Text 
 from game.scripting.change_scene_action import ChangeSceneAction
@@ -18,7 +18,7 @@ from game.scripting.collide_enemy_action import CollideEnemyAction
 #from game.scripting.collide_enemy_action import CollideEnemyAction
 from game.scripting.control_ship_action import ControlShipAction
 from game.scripting.draw_ship_action import DrawShipAction
-from game.scripting.draw_bricks_action import DrawBricksAction
+from game.scripting.draw_enemies_action import DrawEnemiesAction
 from game.scripting.draw_dialog_action import DrawDialogAction
 from game.scripting.draw_hud_action import DrawHudAction
 #from game.scripting.draw_ship_action import DrawShipAction
@@ -51,7 +51,7 @@ class SceneManager:
     COLLIDE_ENEMY_ACTION = CollideEnemyAction(PHYSICS_SERVICE, AUDIO_SERVICE)
     CONTROL_SHIP_ACTION = ControlShipAction(KEYBOARD_SERVICE)
     DRAW_SHIP_ACTION = DrawShipAction(VIDEO_SERVICE)
-    DRAW_BRICKS_ACTION = DrawBricksAction(VIDEO_SERVICE)
+    DRAW_ENEMIES_ACTION = DrawEnemiesAction(VIDEO_SERVICE)
     DRAW_DIALOG_ACTION = DrawDialogAction(VIDEO_SERVICE)
     DRAW_HUD_ACTION = DrawHudAction(VIDEO_SERVICE)
     END_DRAWING_ACTION = EndDrawingAction(VIDEO_SERVICE)
@@ -112,7 +112,6 @@ class SceneManager:
         
     def _prepare_try_again(self, cast, script):
         self._add_ship(cast)
-        #self._add_ship(cast)
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)
@@ -131,7 +130,6 @@ class SceneManager:
 
     def _prepare_game_over(self, cast, script):
         self._add_ship(cast)
-        #self._add_ship(cast)
         self._add_dialog(cast, WAS_GOOD_GAME)
 
         script.clear_actions(INPUT)
@@ -156,7 +154,7 @@ class SceneManager:
         velocity = Point(0, 0)
         body = Body(position, size, velocity)
         image = Image(SHIP_IMAGE)
-        ship = Ball(body, image, True)
+        ship = Ship(body, image, True)
         cast.add_actor(SHIP_GROUP, ship)
 
     def _add_enemies(self, cast):
@@ -165,6 +163,11 @@ class SceneManager:
         stats = cast.get_first_actor(STATS_GROUP)
         level = stats.get_level() % BASE_LEVELS
         filename = LEVEL_FILE.format(level)
+
+        #for i in NUM_MAX_ENEMIES:
+
+
+
 
         with open(filename, 'r') as file:
             reader = csv.reader(file, skipinitialspace=True)
@@ -242,7 +245,7 @@ class SceneManager:
         script.add_action(OUTPUT, self.START_DRAWING_ACTION)
         script.add_action(OUTPUT, self.DRAW_HUD_ACTION)
         script.add_action(OUTPUT, self.DRAW_SHIP_ACTION)
-        script.add_action(OUTPUT, self.DRAW_BRICKS_ACTION)
+        script.add_action(OUTPUT, self.DRAW_ENEMIES_ACTION)
         #script.add_action(OUTPUT, self.DRAW_SHIP_ACTION)
         script.add_action(OUTPUT, self.DRAW_DIALOG_ACTION)
         script.add_action(OUTPUT, self.END_DRAWING_ACTION)

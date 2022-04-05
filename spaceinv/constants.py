@@ -32,6 +32,8 @@ Mysterykilled_SOUND = "spaceinv/asset/sounds/sounds_mysterykilled.wav"
 Shipexplotion_SOUND = "spaceinv/asset/sounds/sounds_shipexplotion.wav"
 Shoot_SOUND = "spaceinv/asset/sounds/sounds_shoot.wav"
 Shoot2_SOUND = "spaceinv/asset/sounds/sounds_shoot2.wav"
+WELCOME_SOUND = "spaceinv/asset/sounds/start.wav"
+OVER_SOUND = "spaceinv/asset/sounds/over.wav"
 
 # TEXT
 ALIGN_CENTER = 0
@@ -88,10 +90,10 @@ MAXIMUM_LIVES = 5
 
 # HUD
 HUD_MARGIN = 15
-LEVEL_GROUP = "level"
+#LEVEL_GROUP = "level"
 LIVES_GROUP = "lives"
 SCORE_GROUP = "score"
-LEVEL_FORMAT = "LEVEL: {}"
+#LEVEL_FORMAT = "LEVEL: {}"
 LIVES_FORMAT = "LIVES: {}"
 SCORE_FORMAT = "SCORE: {}"
 
@@ -113,6 +115,7 @@ SHOOT_VELOCITY = 7
 
 # ENEMY
 ENEMY_GROUP = "enemies"
+NUM_MAX_ENEMIES = 50
 ENEMY_IMAGES = {
     "b": [f"spaceinv/assets/images/{i:03}.png" for i in range(4, 6)],
     "g": [f"spaceinv/assets/images/{i:03}.png" for i in range(7, 9)],

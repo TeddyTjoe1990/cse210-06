@@ -9,7 +9,7 @@ class LoadAssetsAction(Action):
         self._video_service = video_service
 
     def execute(self, cast, script, callback):
-        self._audio_service.load_sounds("spaceinv/assets/sounds")
-        self._video_service.load_fonts("spaceinv/assets/fonts")
-        self._video_service.load_images("spaceinv/assets/images")
+        self._audio_service.load_sounds("spaceinv/asset/sounds")
+        self._video_service.load_fonts("spaceinv/asset/fonts")
+        self._video_service.load_images("spaceinv/asset/images")
         
